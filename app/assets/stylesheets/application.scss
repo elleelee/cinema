@@ -18,3 +18,8 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+//.content applies to all content between navbar and footer
+.content {
+  padding: 0px 16px;
+}
