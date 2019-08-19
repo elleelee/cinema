@@ -26,10 +26,10 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.update(event_params)
-    if @event.save
+    @event.update(event_params)
+    if @event.update(event_params)
       # need to redirect to host show page
-      rediect_to event_path(@event)
+      redirect_to event_path(@event)
     else
       render :edit
     end
@@ -52,6 +52,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require[:events].permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity)
+    params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity, :photo)
   end
 end
