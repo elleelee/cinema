@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   VENUE_CATEGORIES = ["home", "pub", "roof top", "public space"]
   belongs_to :user
   has_many :bookings
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :users, through: :bookings
   validates :name, presence: true
   validates :address, presence: true
