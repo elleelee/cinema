@@ -1,7 +1,20 @@
-<%= @event.photo %>
-<%= @event.name %>
-<%= @event.movie %>
-<%= @event.address %>
+<div class="images">
+  <img src="" alt="">
+  <img src="" alt="">
+  <%= @event.photo %>
+</div>
+
+<div class="container">
+  <div class="left-showbox">
+    <%= @event.name %>
+    Showing: <%= @event.movie %>
+    @<%= @event.address %>
+  </div>
+  <div class="right-showbox">
+
+  </div>
+</div>
+
 <%= @event.description %>
 <%= @event.date %>
 <%= @event.ticket_price %>
