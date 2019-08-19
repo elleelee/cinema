@@ -16,8 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      # need to redirect to host show page
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       render :new
     end
@@ -30,7 +29,7 @@ class EventsController < ApplicationController
     @event = Event.update(event_params)
     if @event.save
       # need to redirect to host show page
-      rediect_to events_path
+      rediect_to event_path(@event)
     else
       render :edit
     end
