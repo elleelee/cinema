@@ -1,0 +1,14 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.input :venue_type, collection: Event::VENUE_CATEGORIES %>
+  <%= f.input :movie %>
+  <%= f.input :ticket_price, input_html: { min: '1' } %>
+  <%= f.input :capacity, input_html: { min: '0' } %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <!-- need to be able to upload multiple photos -->
+  <%= f.submit "Add event" %>
+<% end %>
