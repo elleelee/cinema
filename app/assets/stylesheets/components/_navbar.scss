@@ -1,12 +1,17 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-cinema {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-cinema .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-cinema .navbar-brand img {
   width: 40px;
 }
