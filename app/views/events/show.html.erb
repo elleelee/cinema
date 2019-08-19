@@ -1,1 +1,14 @@
-show.html.erb
+<%= @event.photo %>
+<%= @event.name %>
+<%= @event.movie %>
+<%= @event.address %>
+<%= @event.description %>
+<%= @event.date %>
+<%= @event.ticket_price %>
+<%= @event.venue_type %>
+<%= @event.capacity %>
+
+<%= link_to 'Update Event', edit_event_path(@event) %>
+<%= link_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: "Delete #{@event.name}?" }  %>
+<%= link_to 'Back to Events', events_path %>
+
