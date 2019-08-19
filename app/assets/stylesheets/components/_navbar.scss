@@ -1,4 +1,5 @@
 .navbar {
+  background-color: white;
   display: flex;
   align-items: center;
 }
@@ -15,3 +16,8 @@
 .navbar-cinema .navbar-brand img {
   width: 40px;
 }
+
+.host-link {
+  color: #5f6060;
+}
+
