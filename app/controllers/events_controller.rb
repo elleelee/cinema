@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_policy_scoped
+  skip_after_action :verify_authorized, only: [:show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -11,10 +14,13 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    authorize @event
   end
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
+    authorize @event
     if @event.save
       redirect_to event_path(@event)
     else
@@ -23,9 +29,11 @@ class EventsController < ApplicationController
   end
 
   def edit
+    authorize @event
   end
 
   def update
+    authorize @event
     @event.update(event_params)
     if @event.update(event_params)
       # need to redirect to host show page
@@ -36,6 +44,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authorize @event
     if @event.destroy
       # need to redirect to host show page
       rediect_to events_path
