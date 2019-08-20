@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  VENUE_CATEGORIES = ["home", "pub", "roof top", "public space"]
+  VENUE_CATEGORIES = ["Home", "Pub", "Roof top", "Public space"]
   belongs_to :user
   has_many :bookings
   has_many :photos, dependent: :destroy
@@ -12,5 +12,5 @@ class Event < ApplicationRecord
   validates :movie, presence: true
   validates :ticket_price, presence: true
   validates :capacity, presence: true
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photos, PhotoUploader
 end

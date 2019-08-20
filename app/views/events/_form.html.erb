@@ -1,15 +1,22 @@
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.input :venue_type, collection: Event::VENUE_CATEGORIES %>
-  <%= f.input :movie %>
-  <%= f.input :ticket_price, input_html: { min: '1' } %>
-  <%= f.input :capacity, input_html: { min: '0' } %>
-  <%= f.input :photo, class: "button" %>
-  <%= f.input :photo_cache, as: :hidden, class: "button" %>
-  <!-- need to be able to upload multiple photos -->
-  <%= f.submit, class: "button" %>
-<% end %>
-
+<div class="container">
+  <div class="form-container">
+    <%= simple_form_for(@event) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :date, as: :date, html5: true %>
+      <%= f.input :venue_type, collection: Event::VENUE_CATEGORIES %>
+      <%= f.input :movie %>
+      <%= f.input :ticket_price, input_html: { min: '1' } %>
+      <%= f.input :capacity, input_html: { min: '0' } %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden, class: "btn btn-primary" %>
+      <!-- need to be able to upload multiple photos -->
+      <% unless @event.id.nil? %>
+        <%= f.submit "Edit event", class: "btn btn-primary" %>
+      <% else %>
+        <%= f.submit "Add event", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

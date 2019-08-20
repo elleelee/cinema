@@ -1,5 +1,6 @@
-.container {
+.resultscontainer {
   padding: 0 0 20px 0;
+  margin: 10px;
 }
 
 .searchresults {
@@ -8,6 +9,7 @@ padding: 0 25px;
 
 .resultsheading {
   margin: 10px 0;
+  color: #3d3f3f;
 }
 
 .mapcolumn {
@@ -27,17 +29,23 @@ padding: 0 25px;
 
 /* Event card */
 
-.event {
-  & + & {
-    margin-top: 10px;
+.eventcard {
+  &:hover {
+    transform: scale(1.05);
   }
+  margin-top: 10px;
   background-color: white;
   list-style: none;
   display: flex;
+  text-decoration: none;
+  color: #3d3f3f;
+  transition: 0.3s;
 }
 
 .event__title {
   margin-top: 0;
+  padding-top: 20px;
+  text-decoration: none;
 }
 
 .event__thumbnail {
@@ -46,6 +54,14 @@ padding: 0 25px;
 
 .event_info {
   margin-left: 10px;
+  text-decoration: none;
 }
 
+.event__details {
+  text-decoration: none;
+}
+
+.resultsmap {
+  margin-top: 10px;
+}
 
