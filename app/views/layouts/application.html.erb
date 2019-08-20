@@ -11,25 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet">
   </head>
   <body>
-  <div class="page-container">
-    <%= render './pages/navbar' %>
+    <div class="page-container">
+      <%= render './pages/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
     </div>
-    <div class="cinema-footer">
-      <div class="footer-socials">
-        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        © cinema 2019
-      </div>
-    </div>
+    <%= render './pages/footer' %>
   </body>
 </html>
