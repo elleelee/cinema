@@ -11,56 +11,58 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <% if user_signed_in?  %>
-<!--     THE ONE WHERE YOU ARE SIGNED IN ALREADY AND CAN SIGN OUT
- -->  <div class="navbar navbar-expand-sm navbar-light navbar-cinema">
-        <a class="navbar-brand" href="/events">
-        <img src="https://i.ya-webdesign.com/images/movie-logo-png.png" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <a class="nav-link host-link" href="#">Host an Event</a>
-            <li class="nav-item dropdown">
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://icon-library.net/images/smileyface-icon/smileyface-icon-22.jpg" />
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">My Events</a>
-                <a class="dropdown-item" href="#">My Bookings</a>
-                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-<!--       THE ONE WHERE YOU ARE SIGNED OUT AND WANT TO SIGN IN
- -->  <div class="navbar navbar-expand-sm navbar-light navbar-cinema">
-        <a class="navbar-brand" href="/events">
+    <div class="page_container">
+      <% if user_signed_in?  %>
+  <!--     THE ONE WHERE YOU ARE SIGNED IN ALREADY AND CAN SIGN OUT
+   -->  <div class="navbar navbar-expand-sm navbar-light navbar-cinema">
+          <a class="navbar-brand" href="/events">
           <img src="https://i.ya-webdesign.com/images/movie-logo-png.png" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <a class="nav-link host-link" href="/users/sign_up">Log In / Create Account</a>
-          </ul>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <a class="nav-link host-link" href="#">Host an Event</a>
+              <li class="nav-item dropdown">
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://icon-library.net/images/smileyface-icon/smileyface-icon-22.jpg" />
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">My Events</a>
+                  <a class="dropdown-item" href="#">My Bookings</a>
+                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+  <!--       THE ONE WHERE YOU ARE SIGNED OUT AND WANT TO SIGN IN
+   -->  <div class="navbar navbar-expand-sm navbar-light navbar-cinema">
+          <a class="navbar-brand" href="/events">
+            <img src="https://i.ya-webdesign.com/images/movie-logo-png.png" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <a class="nav-link host-link" href="/users/sign_up">Log In / Create Account</a>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+  <!--     END OF NAVBARS SECTION
+   -->    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </div>
+      <div class="cinema-footer">
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+          © cinema 2019
         </div>
       </div>
-    <% end %>
-<!--     END OF NAVBARS SECTION
- -->    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <div class="cinema-footer">
-      <div class="footer-socials">
-        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        © cinema 2019
-      </div>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
   </body>
 </html>

@@ -18,9 +18,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   position: relative;
-  min-height: 100vh;
 }
 
 .notice {
   margin: 0px;
+}
+
+.page_container {
+  min-height: calc(100vh - 100px);
 }
