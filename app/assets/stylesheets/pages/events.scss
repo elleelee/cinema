@@ -19,6 +19,7 @@
 .resultsmap {
   background-color: red;
   margin-top: 10px;
+  position: sticky;
 }
 
 /* List of event cards */
@@ -30,17 +31,22 @@
 
 /* Event card */
 
+.results-holder {
+  display: flex;
+}
+
 .eventcard {
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.002);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  margin-top: 10px;
+  margin-bottom: 18px;
   background-color: white;
   list-style: none;
   display: flex;
   text-decoration: none;
   color: #3d3f3f;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .event__title {
@@ -61,5 +67,3 @@
 .event__details {
   text-decoration: none;
 }
-
-
