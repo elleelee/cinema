@@ -7,8 +7,10 @@
   <%= f.input :movie %>
   <%= f.input :ticket_price, input_html: { min: '1' } %>
   <%= f.input :capacity, input_html: { min: '0' } %>
-  <%= f.input :photos, class: "button", input_html: { multiple: true } %>
-  <%= f.input :photos_cache, as: :hidden, class: "button" %>
+  <%= f.simple_fields_for :photos do |p| %>
+    <%= p.input :name, as: :file, class: "button", input_html: { multiple: true }, name:"photos[name][]" %>
+    <%= p.input :name_cache, as: :hidden, class: "button" %>
+  <% end %>
   <!-- need to be able to upload multiple photos -->
   <%= f.submit 'Edit', class: "button" %>
 <% end %>
