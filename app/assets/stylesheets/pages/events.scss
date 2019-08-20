@@ -1,10 +1,10 @@
-.resultscontainer {
+.results-container {
   padding: 0 0 20px 0;
-  margin: 10px;
+  margin: 30px 10px;
 }
 
 .searchresults {
-padding: 0 25px;
+  padding: 0 25px;
 }
 
 .resultsheading {
@@ -18,8 +18,8 @@ padding: 0 25px;
 
 .resultsmap {
   background-color: red;
+  margin-top: 10px;
   position: sticky;
-  top: 10px;
 }
 
 /* List of event cards */
@@ -67,4 +67,3 @@ padding: 0 25px;
 .event__details {
   text-decoration: none;
 }
-
