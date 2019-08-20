@@ -39,7 +39,7 @@
   position: absolute;
   top: -50px;
   left: 720px;
-  width: 355px;
+  width: 397px;
 }
 
 .right-showbox p {
@@ -50,6 +50,32 @@
   margin-top: 16px;
 }
 
+.bottom-margin {
+  margin-bottom: 36px;
+}
+
 .bottom_24 {
   margin-bottom: 24px;
+}
+
+.round-bordered {
+  border: 1px solid #5a5a5a;
+  border-radius: 50%;
+  width: 35px;
+  font-size: 18px;
+  color: #848484;
+  height: 35px;
+  padding: 3px
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#counter {
+  margin: 0 15px;
 }
