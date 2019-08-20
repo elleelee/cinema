@@ -1,13 +1,19 @@
+.show-container {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+}
+
 .show-content {
   display: flex;
   height: 80vh;
-  margin-top: 70px;
 }
 
 .left-showbox {
-  flex-grow: 1;
+  width: 700px;
   padding: 20px;
   margin-right: 20px;
+  margin-top: 50px;
 }
 
 .left-showbox h4, .left-showbox h6{
@@ -15,9 +21,9 @@
   margin-bottom: 24px;
 }
 
-.left-showbox h6 {
+.left-showbox h3 {
   margin-top: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 16px;
 }
 
 .underline {
@@ -26,10 +32,14 @@
 
 .right-showbox {
   flex: 0 0 400px;
-  padding: 20px;
+  padding: 40px;
   background-color: white;
   border: 1px solid rgba(0,0,0,0.2);
-  height: 400px;
+  height: 420px;
+  position: absolute;
+  top: -50px;
+  left: 720px;
+  width: 355px;
 }
 
 .right-showbox p {
@@ -38,4 +48,8 @@
 
 .top-margin {
   margin-top: 16px;
+}
+
+.bottom_24 {
+  margin-bottom: 24px;
 }
