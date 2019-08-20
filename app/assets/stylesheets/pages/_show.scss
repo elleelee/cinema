@@ -1,6 +1,6 @@
 .show-content {
   display: flex;
-  height: 400px;
+  height: 100vh;
 }
 
 .left-showbox {
@@ -28,6 +28,7 @@
   padding: 20px;
   background-color: white;
   border: 1px solid rgba(0,0,0,0.2);
+  height: 400px;
 }
 
 .right-showbox p {
