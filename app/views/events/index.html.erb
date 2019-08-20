@@ -4,8 +4,7 @@
     <h4 class="resultsheading"><%= @events.count  %> screenings in AREA from DATE - DATE</h4>
 
 
-
-    <div class="results-holder">
+    <div class="row">
       <div class="col-md-7">
         <div class="row">
           <ul class= "events_list">
@@ -21,10 +20,10 @@
                     <h2 class="event__details">£<%= event.ticket_price %>/ticket</h2>
                   </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
-          </ul>
-        </div>
+          <% end %>
+        </ul>
       </div>
       <div class="col-md-5">
         <div class="resultsmap">
