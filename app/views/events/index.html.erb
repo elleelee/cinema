@@ -4,26 +4,29 @@
     <h4 class="resultsheading"><%= @events.count  %> screenings in AREA from DATE - DATE</h4>
 
 
-    <div class="row">
-      <div class="col-md-8">
-        <ul class= "events_list">
-          <% @events.each do |event| %>
-            <%= link_to event, class: 'text-decoration-none' do %>
-              <div class="eventcard">
-                <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
-                <div class="event_info">
-                  <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
-                  <li class="event__details"><%= event.address %></li>
-                  <li class="event__details"><%= event.date %></li>
-                  <li class="event__details">£<%= event.ticket_price %> pp</li>
-                  <li class="event__details"><%= event.venue_type %></li>
+
+    <div class="results-holder">
+      <div class="col-md-7">
+        <div class="row">
+          <ul class= "events_list">
+            <% @events.each do |event| %>
+              <%= link_to event, class: 'text-decoration-none' do %>
+                <div class="eventcard">
+                  <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+                  <div class="event_info">
+                    <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
+                    <li class="event__details"><%= event.address %></li>
+                    <li class="event__details"><%= event.date %></li>
+                    <li class="event__details">£<%= event.ticket_price %> pp</li>
+                    <li class="event__details"><%= event.venue_type %></li>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </ul>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="resultsmap">
           <img src="">
         </div>
