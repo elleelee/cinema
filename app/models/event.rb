@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  VENUE_CATEGORIES = ["home", "pub", "roof top", "public space"]
+  VENUE_CATEGORIES = ["Home", "Pub", "Roof top", "Public space"]
   belongs_to :user
   has_many :bookings
   has_many :photos, dependent: :destroy
