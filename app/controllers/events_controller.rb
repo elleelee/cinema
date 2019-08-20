@@ -22,6 +22,9 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save
+      params[:event][:photos][:name]&.each do |url|
+        @event.photos.create(name: url)
+      end
       redirect_to event_path(@event)
     else
       render :new
@@ -36,6 +39,9 @@ class EventsController < ApplicationController
     authorize @event
     @event.update(event_params)
     if @event.update(event_params)
+      params[:event][:photos][:name]&.each do |url|
+        @event.photos.create(name: url)
+      end
       # need to redirect to host show page
       redirect_to event_path(@event)
     else
@@ -61,6 +67,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity, :photos)
+    params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity)
   end
 end
