@@ -6,19 +6,17 @@
 
     <div class="row">
       <div class="col-md-7">
-        <div class="row">
-          <ul class= "events_list">
-            <% @events.each do |event| %>
-              <%= link_to event, class: 'text-decoration-none' do %>
-                <div class="eventcard">
-                  <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
-                  <div class="event_info">
-                    <p class="event__details"><b><%= event.venue_type.upcase %></b></li>
-                    <h1 class="event__title"><%= event.name %> - <%= event.movie %></h1>
-                    <h4 class="event__details"><%= event.address %></h4>
-                    <h4 class="event__details"><%= event.date %></h4>
-                    <h2 class="event__details">£<%= event.ticket_price %>/ticket</h2>
-                  </div>
+        <ul class= "events_list">
+          <% @events.each do |event| %>
+            <%= link_to event, class: 'text-decoration-none' do %>
+              <div class="eventcard">
+                <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+                <div class="event_info">
+                  <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
+                  <li class="event__details"><%= event.address %></li>
+                  <li class="event__details"><%= event.date %></li>
+                  <li class="event__details">£<%= event.ticket_price %> /ticket</li>
+                  <li class="event__details"><%= event.venue_type %></li>
                 </div>
               </div>
             <% end %>
