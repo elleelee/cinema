@@ -35,7 +35,7 @@
     <div class="right-showbox">
       <h2>Event Info</h2>
       <p class="top-margin">£<%= @event.ticket_price %> per person</p>
-      <p>Event Date: <%= @event.date.strftime("%A, %b %d") %></p>
+      <p>Time: <%= @event.date.strftime("%A, %d %b %Y %l:%M %p") %></p>
       <% if user_signed_in? %>
         <%= render 'bookings/form', event: @event, booking: @booking  %>
       <% end %>
