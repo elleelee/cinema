@@ -12,11 +12,13 @@
 @import "components/index";
 @import "components/footer";
 @import "pages/index";
+@import "pages/edit";
 
 body {
-  font-family: 'Livvic', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
-
 
 .notice {
   margin: 0px;

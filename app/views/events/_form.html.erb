@@ -7,9 +7,9 @@
   <%= f.input :movie %>
   <%= f.input :ticket_price, input_html: { min: '1' } %>
   <%= f.input :capacity, input_html: { min: '0' } %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :photo, class: "button" %>
+  <%= f.input :photo_cache, as: :hidden, class: "button" %>
   <!-- need to be able to upload multiple photos -->
-  <%= f.submit "Add event" %>
+  <%= f.submit "Add event", class: "button" %>
 <% end %>
 
