@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :events do
     resources :bookings, only: [:new, :create]
   end
-  resource :profiles, only: :show
+  resource :profile, only: :show
 end

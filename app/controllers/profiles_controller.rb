@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = current_user
+    skip_authorization
   end
 end
