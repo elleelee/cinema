@@ -12,5 +12,4 @@ class Event < ApplicationRecord
   validates :movie, presence: true
   validates :ticket_price, presence: true
   validates :capacity, presence: true
-  mount_uploader :photos, PhotoUploader
 end
