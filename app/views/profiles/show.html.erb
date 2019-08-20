@@ -1,4 +1,40 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<!-- NEED TO CHANGE THE CSS CLASS NAMES IN HTML FILE THEN CHANGE THE ONES IN HERE
+SO THAT THE STYLING MATCHES THAT OF INDEX PAGE -->
 
-<p><%= current_user.email %></p>
+
+
+
+
+<div class="profile">
+    <h4 class="profile__heading"><%= @user.name  %> you have NUMBER bookings and events</h4>
+    <div class="events">
+      <ul class="events__list">
+        <%= USER.EACH? do |user| %> <!-- THIS NEEDS CHANING -->
+        <div class="event__card">
+          <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+          <div class="event__info-user">
+            <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
+            <li class="event__details"><%= event.address %></li>
+            <li class="event__details"><%= event.date %></li>
+            <li class="event__details">£<%= event.ticket_price %> pp</li>
+            <li class="event__details"><%= event.venue_type %></li>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tickets">
+      <ul class="tickets__list">
+        <%= USER.EACH? do |user| %>
+         <div class="ticket__card">
+<!--           <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+          <div class="event_info">
+            <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
+            <li class="event__details"><%= event.address %></li>
+            <li class="event__details"><%= event.date %></li>
+            <li class="event__details">£<%= event.ticket_price %> pp</li>
+            <li class="event__details"><%= event.venue_type %></li>
+        </div> -->
+        <% end %>
+      </ul>
+    </div>
