@@ -2,10 +2,10 @@ class BookingsController < ApplicationController
 
   before_action :set_event
 
-  def new
-    @booking = Booking.new
-    authorize @booking
-  end
+  # def new
+  #   @booking = Booking.new
+  #   authorize @booking
+  # end
 
   def create
     @booking = Booking.new(booking_params)

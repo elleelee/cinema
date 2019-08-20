@@ -19,15 +19,12 @@
   </a>
 </div>
 
-<div class="body-container">
+<div class="show-container">
   <div class="show-content">
     <div class="left-showbox">
-      <h2><%= @event.name %></h2>
-      <h4>Showing: <%= @event.movie %></h4>
-      <h6>@<%= @event.address %></h6>
-      <p class="underline">Venue Type: <%= @event.venue_type %></p>
-      <p><%= @event.description %></p>
-      <%= link_to 'Back to Events', events_path, class: 'btn btn-primary'%>
+      <h3>Venue: @<%= @event.address %></h3>
+      <p>What's the venue like?  You will enjoy the event at a <span class="underline"><%= @event.venue_type.capitalize %></span></p>
+      <p class="bottom_24"><%= @event.description %></p>
       <% if user_signed_in? && policy(@event).edit? %>
         <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %>
       <% end %>
@@ -40,9 +37,7 @@
       <p class="top-margin">£<%= @event.ticket_price %> per person</p>
       <p>Event Date: <%= @event.date.strftime("%A, %b %d") %></p>
       <% if user_signed_in? %>
-        <%= link_to "Book", new_event_booking_path(@event), class: 'btn btn-primary w-100' %>
-      <% else %>
-        <%= link_to "Sign in to book", new_user_session_path, class: 'btn btn-primary w-100' %>
+        <%= render 'bookings/form', event: @event, booking: @booking  %>
       <% end %>
     </div>
   </div>

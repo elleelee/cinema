@@ -1,6 +1,6 @@
 <div class="form-container">
-  <%= simple_form_for [@event ,@booking] do |f| %>
+  <%= simple_form_for [event, booking] do |f| %>
     <%= f.input :number_of_tickets, collection: 1..(@event.capacity) %>
-    <%= f.submit 'Book', class: "btn btn-primary" %>
+    <%= f.submit 'Book', class: "btn btn-primary w-100" %>
   <% end %>
 </div>
