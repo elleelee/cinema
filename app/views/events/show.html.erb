@@ -5,23 +5,23 @@
 </div>
 
 <div class="container">
-  <div class="left-showbox">
-    <%= @event.name %>
-    Showing: <%= @event.movie %>
-    @<%= @event.address %>
-  </div>
-  <div class="right-showbox">
-
+  <div class="show-content">
+    <div class="left-showbox">
+      <h2><%= @event.name %></h2>
+      <h4>Showing: <%= @event.movie %></h4>
+      <h6>@<%= @event.address %></h6>
+      <p class="underline">Venue Type: <%= @event.venue_type %></p>
+      <p><%= @event.description %></p>
+      <%= link_to 'Back to Events', events_path, class: 'btn btn-primary'%>
+    </div>
+    <div class="right-showbox">
+      <h2>Event Info</h2>
+      <p class="top-margin">£<%= @event.ticket_price %> per person</p>
+      <p>Event Date: <%= @event.date.strftime("%A, %b %d") %></p>
+      <%= link_to "Book", events_path, class: 'btn btn-primary w-100' %>
+    </div>
   </div>
 </div>
 
-<%= @event.description %>
-<%= @event.date %>
-<%= @event.ticket_price %>
-<%= @event.venue_type %>
-<%= @event.capacity %>
 
-<%= link_to 'Update Event', edit_event_path(@event) %>
-<%= link_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: "Delete #{@event.name}?" }  %>
-<%= link_to 'Back to Events', events_path %>
 

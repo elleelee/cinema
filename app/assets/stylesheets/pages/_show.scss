@@ -1,0 +1,39 @@
+.show-content {
+  display: flex;
+  height: 400px;
+}
+
+.left-showbox {
+  flex-grow: 1;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.left-showbox h4, .left-showbox h6{
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.left-showbox h6{
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.right-showbox {
+  flex: 0 0 400px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.right-showbox p {
+  font-size: 16px;
+}
+
+.top-margin {
+  margin-top: 16px;
+}

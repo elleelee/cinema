@@ -1,13 +1,31 @@
+<div class="searchresults">
+  <div class="container">
 
-<h4>NUMBER screenings in AREA from DATE - DATE</h4>
-<ul>
-  <% @events.each do |event| %>
-    <%= event.name %>
-    <%= event.movie %>
-    <%= event.address %>
-    <%= event.date %>
-    <%= event.ticket_price %>
-    <%= event.venue_type %>
-  <% end %>
-</ul>
+    <h4 class="resultsheading"><%= @events.count  %> screenings in AREA from DATE - DATE</h4>
 
+
+    <div class="row">
+      <div class="col-md-8">
+        <ul class= "events_list">
+          <% @events.each do |event| %>
+          <div class="event">
+            <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+            <div class="event_info">
+              <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
+              <li><%= event.address %></li>
+              <li><%= event.date %></li>
+              <li>£<%= event.ticket_price %> pp</li>
+              <li><%= event.venue_type %></li>
+            </div>
+          </div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="resultsmap">
+          <img src="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

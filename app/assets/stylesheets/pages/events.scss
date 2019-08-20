@@ -1,0 +1,51 @@
+.container {
+  padding: 0 0 20px 0;
+}
+
+.searchresults {
+padding: 0 25px;
+}
+
+.resultsheading {
+  margin: 10px 0;
+}
+
+.mapcolumn {
+  display: flex;
+}
+
+.resultsmap {
+  background-color: red;
+}
+
+/* List of event cards */
+
+.events_list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+/* Event card */
+
+.event {
+  & + & {
+    margin-top: 10px;
+  }
+  background-color: white;
+  list-style: none;
+  display: flex;
+}
+
+.event__title {
+  margin-top: 0;
+}
+
+.event__thumbnail {
+
+}
+
+.event_info {
+  margin-left: 10px;
+}
+
+
