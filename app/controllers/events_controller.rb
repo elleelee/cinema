@@ -31,8 +31,8 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save
-      params[:event][:photos][:name]&.each do |url|
-        @event.photos.create(name: url)
+      params[:event][:photos][:image]&.each do |url|
+        @event.photos.create(image: url)
       end
       redirect_to event_path(@event)
     else
@@ -48,8 +48,8 @@ class EventsController < ApplicationController
     authorize @event
     @event.update(event_params)
     if @event.update(event_params)
-      params[:event][:photos][:name]&.each do |url|
-        @event.photos.create(name: url)
+      params[:event][:photos][:image]&.each do |url|
+        @event.photos.create(image: url)
       end
       # need to redirect to host show page
       redirect_to event_path(@event)
