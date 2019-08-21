@@ -62,7 +62,7 @@ class EventsController < ApplicationController
     authorize @event
     if @event.destroy
       # need to redirect to host show page
-      rediect_to events_path
+      redirect_to events_path
     else
       # need to render to host show page
       render event_path(@event)
