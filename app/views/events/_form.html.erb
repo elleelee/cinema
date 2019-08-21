@@ -10,8 +10,8 @@
       <%= f.input :ticket_price, input_html: { min: '1' } %>
       <%= f.input :capacity, input_html: { min: '0' } %>
       <%= f.simple_fields_for :photos do |p| %>
-        <%= p.input :name, as: :file, class: "button", input_html: { multiple: true }, name:"photos[name][]" %>
-        <%= p.input :name_cache, as: :hidden, class: "button" %>
+        <%= p.input :image, as: :file, class: "button", input_html: { multiple: true }, image:"photos[image][]" %>
+        <%= p.input :image_cache, as: :hidden, class: "button" %>
       <% end %>
       <% unless @event.id.nil? %>
         <%= f.submit "Edit event", class: "btn btn-primary" %>
