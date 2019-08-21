@@ -1,5 +1,23 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
-
-<p><%= current_user.email %></p>
-
+<div class="cards-container">
+  <div class="profilecards col-md-7">
+    <div class="mybookings">
+      <h4 class="profile-title bottom">Events you're going to:</h4>
+      <% @events = current_user.events %>
+      <%= render '/events/eventscards' %>
+    </div>
+    <div class="myevents">
+      <h4 class="profile-title">Events you're hosting:</h4>
+      <div class="hostingcard">
+        <div class="eventposter">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shrug.jpg/220px-Shrug.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
+        </div>
+        <div class="event_info">
+          <h4 class="event__title">No events!</h4>
+          <li class="event__details">You could earn 💰💰💰 by hosting an event!</li>
+          <br>
+          <button type="button" class="btn btn-dark">Host an event!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
