@@ -16,10 +16,11 @@
   display: flex;
 }
 
-.resultsmap {
-  background-color: red;
+#map {
   margin-top: 10px;
   position: sticky;
+  height: 700px;
+  width: 100%;
 }
 
 /* List of event cards */
