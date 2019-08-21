@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
   VENUE_CATEGORIES = ["Home", "Pub", "Roof top", "Public space"]
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   belongs_to :user
   has_many :bookings
   has_many :photos, dependent: :destroy
