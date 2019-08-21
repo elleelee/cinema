@@ -12,9 +12,10 @@ class BookingsController < ApplicationController
     @booking.event = @event
     authorize @booking
     if @booking.save
-      redirect_to event_path(@event)
+      redirect_to profile_path
     else
-      render :new
+      redirect_to profile_path
+      # change to render
     end
   end
 
