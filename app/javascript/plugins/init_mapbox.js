@@ -6,7 +6,7 @@ const initMapbox = () => {
  const fitMapToMarkers = (map, markers) => {
    const bounds = new mapboxgl.LngLatBounds();
    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+   map.fitBounds(bounds, { padding: 90, maxZoom: 15, duration: 0 });
  };
  if (mapElement) { // only build a map if there's a div#map to inject into
    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -21,8 +21,8 @@ const initMapbox = () => {
      // Create a HTML element for your custom marker
      const element = document.createElement('div');
      element.className = 'marker';
+     element.style.backgroundImage = "url('https://cdn2.iconfinder.com/data/icons/pittogrammi/142/94-512.png')";
      // element.style.backgroundImage = url('${marker.image_url}');
-     element.style.backgroundImage = "url('https://www.mapbox.com/mapbox.js/assets/images/astronaut1.png')";
      element.style.backgroundSize = 'contain';
      element.style.width = '25px';
      element.style.height = '25px';
@@ -32,7 +32,7 @@ const initMapbox = () => {
        .addTo(map);
    });
    fitMapToMarkers(map, markers);
-   // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
  }
 };
 

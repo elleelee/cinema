@@ -13,11 +13,16 @@
 @import "pages/index";
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   position: relative;
   min-height: 100vh;
 }
 
 .page-container {
   min-height: calc(100vh - 120px);
+}
+
+#map {
+  margin-top: 10px;
+  border-radius: 4px;
 }

@@ -1,27 +1,11 @@
 <div class="searchresults">
-  <div class="results-container">
+  <div class="cards-container">
 
-    <h4 class="resultsheading"><%= @events.count  %> screenings in AREA from DATE - DATE</h4>
-
+    <h4 class="resultsheading"><%= @events.count  %> screenings in London from 21st of August to 31st of August</h4>
 
     <div class="row">
       <div class="col-md-7">
-        <ul class= "events_list">
-          <% @events.each do |event| %>
-            <%= link_to event, class: 'text-decoration-none' do %>
-              <div class="eventcard">
-                <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
-                <div class="event_info">
-                  <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
-                  <li class="event__details"><%= event.address %></li>
-                  <li class="event__details"><%= event.date %></li>
-                  <li class="event__details">£<%= event.ticket_price %> /ticket</li>
-                  <li class="event__details"><%= event.venue_type %></li>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </ul>
+        <%= render 'eventscards' %>
       </div>
       <div class="col-md-5">
         <div
