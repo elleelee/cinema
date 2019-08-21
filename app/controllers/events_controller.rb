@@ -31,8 +31,9 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save
-      params[:event][:photos][:image]&.each do |url|
-        @event.photos.create(image: url)
+      # raise
+      params_photos.each do |file|
+        @event.photos.create(image: file)
       end
       redirect_to event_path(@event)
     else
@@ -48,9 +49,11 @@ class EventsController < ApplicationController
     authorize @event
     @event.update(event_params)
     if @event.update(event_params)
-      params[:event][:photos][:image]&.each do |url|
-        @event.photos.create(image: url)
+      params_photos.each do |file|
+        @event.photos.create(image: file)
+        # raise
       end
+      # raise
       # need to redirect to host show page
       redirect_to event_path(@event)
     else
@@ -62,7 +65,7 @@ class EventsController < ApplicationController
     authorize @event
     if @event.destroy
       # need to redirect to host show page
-      rediect_to events_path
+      redirect_to events_path
     else
       # need to render to host show page
       render event_path(@event)
@@ -73,6 +76,10 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def params_photos
+    params.dig('event', 'photos', 'image') || []
   end
 
   def event_params
