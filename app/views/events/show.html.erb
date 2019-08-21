@@ -38,7 +38,10 @@
       <p class="bottom-margin">Time: <%= @event.date.strftime("%A, %d %b %Y %l:%M %p") %></p>
       <% if user_signed_in? %>
         <%= render 'bookings/form', event: @event, booking: @booking  %>
+      <% else %>
+        <%= link_to 'Sign in to book', new_user_session_path,class: 'btn btn-primary w-100' %>
       <% end %>
+
     </div>
   </div>
 </div>

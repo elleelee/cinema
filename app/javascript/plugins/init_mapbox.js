@@ -21,8 +21,7 @@ const initMapbox = () => {
      // Create a HTML element for your custom marker
      const element = document.createElement('div');
      element.className = 'marker';
-     // element.style.backgroundImage = url('${marker.image_url}');
-     element.style.backgroundImage = "url('https://www.mapbox.com/mapbox.js/assets/images/astronaut1.png')";
+     element.style.backgroundImage = url('${marker.image_url}');
      element.style.backgroundSize = 'contain';
      element.style.width = '25px';
      element.style.height = '25px';
