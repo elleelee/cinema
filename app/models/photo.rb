@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
   belongs_to :event
-  validates :name, presence: true
-  mount_uploader :name, PhotoUploader
+  validates :image, presence: true
+  mount_uploader :image, PhotoUploader
 end
