@@ -1,7 +1,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <% @event.photos.each do |photo| %>
-      <div class="carousel-item active" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('<%= cl_image_path photo.image %>')">
+    <% @event.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item #{'active' if index == 0 }" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('<%= cl_image_path photo.image %>')">
         <div class="carousel-caption d-none d-md-block">
           <h3><%= photo.event.name %></h3>
           <h5>Showing: <%= photo.event.movie %></h5>
