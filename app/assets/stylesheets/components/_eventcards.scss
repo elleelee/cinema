@@ -1,0 +1,120 @@
+.cards-container {
+  padding: 0 0 20px 0;
+  margin: 30px 10px;
+}
+
+.searchresults {
+  padding: 0 25px;
+}
+
+.resultsheading {
+  margin: 10px 0;
+  color: #3d3f3f;
+}
+
+.mapcolumn {
+  display: flex;
+}
+
+#map {
+  position: sticky;
+  top: 0;
+  height: 700px;
+  width: 100%;
+}
+
+/* List of event cards */
+
+.events_list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+/* Event card */
+
+.results-holder {
+  display: flex;
+}
+
+.eventcard {
+  &:hover {
+    transform: scale(1.002);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  margin-bottom: 18px;
+  background-color: white;
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: #3d3f3f;
+  transition: 0.1s;
+  border-radius: 4px;
+}
+
+.event__title {
+  margin-top: 0;
+  padding-top: 20px;
+  text-decoration: none;
+}
+
+.event__thumbnail {
+  border-radius: 3px 0 0 3px;
+}
+
+.event_info {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.event__details {
+  text-decoration: none;
+}
+
+/* PROFILE BOOKINGS CSS */
+
+.profile-title {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* PROFILE EVENTS CSS */
+
+.event__thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hostingcard {
+    &:hover {
+    transform: scale(1.002);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  margin-bottom: 18px;
+  background-color: white;
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: #3d3f3f;
+  transition: 0.1s;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
