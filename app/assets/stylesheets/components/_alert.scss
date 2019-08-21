@@ -1,8 +1,15 @@
+// .alert {
+//   margin: 0px;
+//   position: absolute;
+//   left: 10px;
+//   top: 70px;
+//   z-index: 1;
+//   color: lightgray;
+// }
+
 .alert {
-  margin: 0px;
-  position: absolute;
-  left: 10px;
-  top: 70px;
-  z-index: 1;
-  color: lightgray;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
 }
