@@ -9,6 +9,8 @@
       <%= f.input :movie %>
       <%= f.input :ticket_price, input_html: { min: '1' } %>
       <%= f.input :capacity, input_html: { min: '0' } %>
+      <%= f.input :poster %>
+      <%= f.input :poster_cache, as: :hidden %>
       <%= f.simple_fields_for :photos do |p| %>
         <%= p.input :image, as: :file, class: "button", input_html: { multiple: true }, image:"photos[image][]" %>
         <%= p.input :image_cache, as: :hidden, class: "button" %>

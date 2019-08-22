@@ -10,7 +10,7 @@
           <li class="event__details"><%= booking.event.address %></li>
           <li class="event__details"><%= booking.event.date.strftime(" %A %e %B") %> at
             <%= booking.event.date.strftime("%l %p") %></li>
-          <li class="event__details">You have paid £<%= booking.event.ticket_price %> /ticket</li>
+          <li class="event__details">You have bought <strong><%= booking.number_of_tickets %></strong> tickets</li>
           <li class="event__details"><%= booking.event.venue_type %></li>
         </div>
       </div>
