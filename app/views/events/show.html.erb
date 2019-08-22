@@ -19,12 +19,16 @@
   </a>
 </div>
 
+
+
+
+
 <div class="show-container">
-  <div class="show-content">
+  <div class="row show-content">
     <div class="left-showbox">
-      <h3>Venue: @<%= @event.address %></h3>
-      <p>What's the venue like?  You will enjoy the event at a <span class="underline"><%= @event.venue_type.capitalize %></span></p>
-      <p class="bottom_24"><%= @event.description %></p>
+      <h3><%= @event.address %></h3>
+      <p>What's the venue like?  You will enjoy the event at a <u><%= @event.venue_type.capitalize %></u></p>
+      <p class="event_descrption"><%= @event.description %></p>
       <% if user_signed_in? && policy(@event).edit? %>
         <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %>
       <% end %>
@@ -35,21 +39,25 @@
     <div class="right-showbox">
       <div class="right-bookingbox">
         <h2>Event Info</h2>
-        <p class="top-margin">£<span id="booking-ticket-price" data-price="<%= @event.ticket_price %>"><%= @event.ticket_price %></span> per person</p>
-        <p>Time: <%= @event.date.strftime("%A, %d %b %Y %l:%M %p") %></p>
-        <p class="bottom-margin show-capacity" data-capacity="<%= @event.capacity %>">Event Capacity: <%= @event.capacity %> people</p>
-        <% if user_signed_in? %>
-          <%= render 'bookings/form', event: @event, booking: @booking  %>
-        <% else %>
-          <%= link_to 'Sign in to book', new_user_session_path,class: 'btn btn-primary w-100' %>
-        <% end %>
+          <div class="eventbooking">
+            <p class="eventbookinginfo">£<span id="booking-ticket-price" data-price="<%= @event.ticket_price %>"><%= @event.ticket_price %></span> per person</p>
+            <p class="eventbookinginfo">Time: <%= @event.date.strftime("%A, %d %b %Y %l:%M %p") %></p>
+            <p class="show-capacity" data-capacity="<%= @event.capacity %>">Event Capacity: <%= @event.capacity %> people</p>
+            </div>
+          <% if user_signed_in? %>
+            <%= render 'bookings/form', event: @event, booking: @booking  %>
+          <% else %>
+            <%= link_to 'Sign in to book', new_user_session_path,class: 'btn btn-primary w-100' %>
+          <% end %>
+        </div>
       </div>
+      <div class="poster">
         <% if @event.poster.present? %>
           <div class="show-movie" style="background-image: url('<%= cl_image_path @event.poster %>')">
         <% end %>
+      </div>
     </div>
   </div>
 </div>
-
 
 

@@ -26,45 +26,33 @@
   margin-bottom: 16px;
 }
 
-.underline {
-  text-decoration: underline;
-}
-
 .right-showbox {
-  flex: 0 0 400px;
-  position: absolute;
-  top: -160px;
-  left:830px;
-  width: 353px;
-  height: 730px;
+  width: 400px;
+  height: 200px;
 }
 
 .right-bookingbox {
   padding: 16px 20px;
   background-color: white;
-  border: 1px solid rgba(0,0,0,0.2);
-  height: 290px;
+  height: 300px;
+  margin-top: -150px;
 }
 
-.right-bookingbox p {
-  margin-bottom: 0;
-}
-
-.right-showbox p {
-  font-size: 16px;
-}
-
-.top-margin {
+.eventbooking {
   margin-top: 8px;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
-.bottom-margin {
-  margin-bottom: 8px;
+.eventbookinginfo {
+  margin-bottom: 0px;
 }
 
-.bottom_24 {
+.event_descrption {
   margin-bottom: 24px;
 }
+
+// BOOKINGS COUNTER
 
 .round-bordered {
   border: 1px solid #5a5a5a;
@@ -89,9 +77,18 @@
   margin: 0 15px;
 }
 
-.show-movie {
-  background-position: center;
-  background-size: cover;
-  height: 427px;
-  width: 353px;
-}
+// MOVIE POSTER
+
+// .poster {
+//   width: 100%;
+//   margin-top: -150px;
+//   display: flex;
+// }
+
+// .show-movie {
+//   background-position: center;
+//   background-size: cover;
+//   height: 428px;
+//   width: 300px;
+//   align-items: right;
+// }
