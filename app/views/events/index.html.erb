@@ -1,7 +1,12 @@
 <div class="searchresults">
   <div class="cards-container">
 
-    <h4 class="resultsheading"><%= @events.size  %> screenings in London from 21st of August to 31st of August</h4>
+    <h4 class="resultsheading">
+      <% search_params = params[:search] %>
+      <% if @from_date && @to_date %>
+        <%= @events.size  %> screenings in <%= search_params[:query] %> from <%= @from_date.strftime("%A, %B %e") %> to <%= @to_date.strftime("%A, %B %e") %></h4>
+
+      <% end %>
 
     <div class="row">
       <div class="col-md-7">
