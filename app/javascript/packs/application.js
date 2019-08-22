@@ -11,16 +11,17 @@ initMapbox();
 initAutocomplete();
 bookingIncrementer();
 
-initSweetalert('#booking-submit', {
-  title: "You booking is successful",
-  text: "Be ready for the event!",
-  icon: "success",
-  button: "OK",
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#profile-link');
-    link.click();
-  }
+initSweetalert('#booking-submit',
+  {
+    title: "You booking is successful",
+    text: "Be ready for the event!",
+    icon: "success",
+    button: "OK",
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#profile-link');
+      link.click();
+    }
 });
 
 
