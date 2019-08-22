@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to profile_path
+      # redirect_to profile_path
     else
       render 'events/show'
     end
