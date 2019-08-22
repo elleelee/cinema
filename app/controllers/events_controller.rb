@@ -5,17 +5,20 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
     @events = Event.geocoded
     search_params = params[:search]
 
-    if search_params[:query].present?
+    if search_params.nil?
+      @events = Event.geocoded
+    elsif search_params[:query].present?
       @events = Event.near(search_params[:query], 10)
     else
       @events = Event.geocoded
     end
 
-    if search_params[:from].present? && search_params[:to].present?
+    if search_params.nil?
+      @events = Event.geocoded
+    elsif search_params[:from].present? && search_params[:to].present?
       @events = @events.where('date >= ?', search_params[:from]).where('date <= ?', search_params[:to])
     else
       @events = Event.geocoded

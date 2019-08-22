@@ -1,7 +1,6 @@
 <ul class= "events_list">
-  <% if @events.any? %>
-    <% @events.each do |event| %>
-      <%= link_to event, class: 'text-decoration-none' do %>
+  <% @events.each do |event| %>
+    <%= link_to event, class: 'text-decoration-none' do %>
         <div class="eventcard">
           <div class="eventposter">
             <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
@@ -15,10 +14,7 @@
             <li class="event__details"><%= event.venue_type %></li>
           </div>
         </div>
-      <% end %>
     <% end %>
-  <% else %>
-    <p>No match</p>
   <% end %>
 </ul>
 
