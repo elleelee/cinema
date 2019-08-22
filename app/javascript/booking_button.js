@@ -14,8 +14,9 @@ const updatePlusOnClick = (element, counter) => {
   const ticketPrice = Number.parseInt(bookingTicketPrice, 10);
   const capacity = Number.parseInt(document.querySelector('.show-capacity').dataset.capacity);
   element.addEventListener("click", (event) => {
-    if (counter.innerHTML < capacity) {
+    if (parseInt(counter.innerHTML, 10) < capacity) {
       countNum += 1;
+      counter.dataset.count = countNum;
       counter.innerHTML = countNum;
       submit.value = `Pay£ ${ticketPrice * countNum }`;
       input.value = countNum;
@@ -25,18 +26,19 @@ const updatePlusOnClick = (element, counter) => {
 };
 
 const updateMinusOnClick = (element, counter) => {
-  let countNum = Number.parseInt(counter.dataset.count, 10);
   const submit = document.querySelector("#booking-submit");
   const input = document.querySelector("#booking_number_of_tickets");
   const bookingTicketPrice = document.querySelector("#booking-ticket-price").dataset.price;
   const ticketPrice = Number.parseInt(bookingTicketPrice, 10);
   const capacity = Number.parseInt(document.querySelector('.show-capacity').dataset.capacity);
   element.addEventListener("click", (event) => {
-    if (counter.innerHTML >= 2) {
+    if (Number.parseInt(counter.innerHTML,10) >= 2) {
+      let countNum = Number.parseInt(counter.dataset.count, 10);
       countNum -= 1;
+      counter.dataset.count = countNum;
       counter.innerHTML = countNum;
       submit.value = `Pay£ ${ticketPrice * countNum }`;
-      console.log(ticketPrice, countNum);
+      // console.log(ticketPrice, countNum);
       input.value = countNum;
     };
     event.preventDefault();
