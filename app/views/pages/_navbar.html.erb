@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="/">
       <img src="https://i.ya-webdesign.com/images/movie-logo-png.png">
     </a>
-    <% if params[:action] != 'home' %>
+    <% if params[:action] != 'home' && params[:action] != 'new' && params[:action] != 'edit' %>
       <%= render './events/searchnav' %>
     <% end %>
     <div></div>
