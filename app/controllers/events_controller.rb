@@ -9,13 +9,13 @@ class EventsController < ApplicationController
     @events = Event.geocoded
     search_params = params[:search]
 
-    if search_params[:query].present?
-      @events = Event.near(search_params[:query], 10)
+    if search_params.present? && search_params[:query].present?
+      @events = Event.near(search_params[:query], 4)
     else
       @events = Event.geocoded
     end
 
-    if search_params[:from].present? && search_params[:to].present?
+    if search_params.present? && search_params[:from].present? && search_params[:to].present?
       @events = @events.where('date >= ?', search_params[:from]).where('date <= ?', search_params[:to])
     else
       @events = Event.geocoded
