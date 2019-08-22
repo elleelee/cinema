@@ -1,8 +1,10 @@
 <div class="cards-container">
   <div class="profilecards col-md-7">
+
+    <!-- MY BOOKINGS -->
     <div class="mybookings">
       <h4 class="profile-title">Events you're going to:</h4>
-        <% if current_user.bookings %>
+        <% if current_user.bookings.any? %>
           <%= render '/shared/bookingeventcards' %>
         <% else %>
           <div class="eventcard">
@@ -11,34 +13,35 @@
             </div>
             <div class="event_info">
               <h4 class="event__title">No events!</h4>
-              <li class="event__details">Check out events near by!</li>
               <br>
-              <button type="button" class="btn btn-primary" href="/events/new">Check out events to attend!</button>
+              <button type="button" class="btn btn-primary" href="/">Check out events near by!</button>
             </div>
           </div>
         <% end %>
     </div>
 
-
+    <!-- MY EVENTS -->
     <div class="myevents">
       <h4 class="profile-title">Events you're hosting:</h4>
-      <% @events = current_user.events %>
-      <% if current_user.events %>
+      <% if current_user.events.any? %>
+        <% @events = current_user.events %>
         <%= render '/shared/eventscards' %>
       <% else %>
         <div class="eventcard">
-        <div class="eventposter">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shrug.jpg/220px-Shrug.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
+          <div class="eventposter">
+            <img src="https://i1.wp.com/mattersofinterest.info/wp-content/uploads/2014/11/rich-monopoly-man.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
+          </div>
+          <div class="event_info">
+            <h4 class="event__title">No events!</h4>
+            <p class="event__details">You could earn 💰💰💰 by hosting an event!</p>
+            <button type="button" class="btn btn-primary" href="/events/new">Create your own event!</button>
+          </div>
         </div>
-        <div class="event_info">
-          <h4 class="event__title">No events!</h4>
-          <li class="event__details">You could earn 💰💰💰 by hosting an event!</li>
-          <br>
-          <button type="button" class="btn btn-primary" href="/events/new">Host an event!</button>
-        </div>
-      </div>
       <% end %>
     </div>
+
+
   </div>
 </div>
+
 
