@@ -2,6 +2,11 @@
   <div class="profilecards col-md-7">
     <div class="mybookings">
       <h4 class="profile-title">Events you're going to:</h4>
+      <ul>
+        <% current_user.bookings.each do |booking| %>
+          <li><%= booking.name %></li>
+        <% end %>
+      </ul>
     </div>
 
 
