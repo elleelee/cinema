@@ -16,9 +16,12 @@ class EventsController < ApplicationController
 
     if search_params.present? && search_params[:from].present? && search_params[:to].present?
       @events = @events.where('date >= ?', search_params[:from]).where('date <= ?', search_params[:to])
+      @from_date = Date.parse(search_params[:from])
+      @to_date = Date.parse(search_params[:to])
     else
       @events = Event.geocoded
     end
+
 
     @markers = @events.map do |event|
       {
