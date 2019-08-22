@@ -8,8 +8,14 @@
   </div>
 
   <%= simple_form_for [@event, @booking] do |f| %>
-    <%= f.input :number_of_tickets, as: :hidden, collection: 1..(@event.capacity), input_html: { value: @event.ticket_price }, id:'price-input' %>
-    <%= f.submit "Pay #{@event.ticket_price}€", class: "btn btn-primary w-100" %>
+    <%= f.input :number_of_tickets, as: :hidden, input_html: { value: 1 }  %>
+    <%= f.submit "Pay #{@event.ticket_price}€", class: "btn btn-primary w-100", id: "booking-submit" %>
   <% end %>
+
+ <!--  <form>
+    <input type="text" value="1" disabled class="form-control" id="booking_number_of_tickets" name="price-cents">
+    <input type="submit" value="Pay <%= @event.ticket_price %>€" class="btn btn-primary" id="booking-submit">
+  </form> -->
+
 </div>
 
