@@ -93,7 +93,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity)
+    params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity, :poster)
   end
 end
       # sql_query = "events.address @@ :query"
