@@ -25,7 +25,7 @@
       <h4 class="profile-title">Events you're hosting:</h4>
       <% if current_user.events.any? %>
         <% @events = current_user.events %>
-        <%= render '/shared/eventscards' %>
+        <%= render '/shared/hosteventcards' %>
       <% else %>
         <div class="eventcard">
           <div class="eventposter">
