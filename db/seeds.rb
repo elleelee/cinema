@@ -16,4 +16,3 @@ Event.create(name: 'Peace of Your Heart', address:'138 Kingsland Road, London Bo
 Event.create(name: 'Heroine Granger', address:'Rye Lane, London Borough of Southwark, England, United Kingdom', description: "Hermoine - the true hero. We've removed all scenes from the eight HP films Hermoine isn't in. Enjoy!", date: Date.today, venue_type: "Roof top", movie: 'Harry Potter 1-8', ticket_price: 5, capacity: 5, user: User.all.sample)
 Event.create(name: 'BEST MOVIE EVER', address: "Regent's Place Plaza, London Borough of Camden, England, United Kingdom", description: 'JeffJeffGoldblum, Richard Attenborough, blood and dinosaurs - can it get any better?', date: Date.today, venue_type: "Public space", movie: 'Jurassic Park', ticket_price: 20, capacity: 10, user: User.all.sample)
 
-
