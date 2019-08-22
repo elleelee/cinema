@@ -10,12 +10,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.event = @event
+    @booking.user = current_user
     authorize @booking
     if @booking.save
       redirect_to profile_path
     else
-      redirect_to profile_path
-      # change to render
+      render 'events/show'
     end
   end
 
