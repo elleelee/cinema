@@ -12,11 +12,14 @@
             <li class="event__details"><%= event.address %></li>
             <li class="event__details"><%= event.date.strftime(" %A %e %B") %> at
               <%= event.date.strftime("%l %p") %></li>
-            <li class="event__details">£<%= event.ticket_price %> /ticket</li>
+              <% sum = 0 %>
+              <% event.bookings.each do |booking| %>
+                <% sum += booking.number_of_tickets %>
+              <% end %>
+            <li class="event__details"><strong><%= sum %></strong> people have booked your event & you have earned <strong>£<%= event.ticket_price * sum %></strong> on this!</li>
             <li class="event__details"><%= event.venue_type %></li>
           </div>
         </div>
     <% end %>
   <% end %>
 </ul>
-

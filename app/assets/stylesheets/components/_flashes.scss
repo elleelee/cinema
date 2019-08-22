@@ -1,0 +1,26 @@
+.notice {
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  z-index: 1;
+  color: gray;
+}
+
+.alert-info, .alert-warning {
+  position: absolute;
+  background-color: transparent;
+  color: gray;
+  padding: 0;
+  border: none;
+  margin: 0;
+  z-index: 5;
+  left: 5px;
+}
+
+.alert-dismissible .close {
+  position: relative;
+  text-shadow: none;
+  float: right;
+  padding: 0;
+  font-size: 1.5rem;
+}
