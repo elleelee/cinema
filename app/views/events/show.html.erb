@@ -42,7 +42,12 @@
           <div class="eventbooking">
             <p class="eventbookinginfo">£<span id="booking-ticket-price" data-price="<%= @event.ticket_price %>"><%= @event.ticket_price %></span> per person</p>
             <p class="eventbookinginfo">Time: <%= @event.date.strftime("%A, %d %b %Y %l:%M %p") %></p>
-            <p class="show-capacity" data-capacity="<%= @event.capacity %>">Event Capacity: <%= @event.capacity %> people</p>
+            <% booking_sum = 0 %>
+            <% @event.bookings.each do |booking| %>
+              <% booking_sum += booking.number_of_tickets %>
+            <% end %>
+            <% tickets_left = (@event.capacity) - (booking_sum) %>
+            <p class="show-capacity" data-capacity="<%= tickets_left %>"><%= tickets_left %> tickets left!</p>
             </div>
           <% if user_signed_in? %>
             <%= render 'bookings/form', event: @event, booking: @booking  %>
