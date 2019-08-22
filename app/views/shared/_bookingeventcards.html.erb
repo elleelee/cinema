@@ -13,7 +13,7 @@
           <li class="event__details"><%= booking.event.date.strftime(" %A %e %B") %> at
             <%= booking.event.date.strftime("%l %p") %></li>
           <li class="event__details">You have bought <strong><%= booking.number_of_tickets %></strong> tickets</li>
-          <li class="event__details"><%= booking.event.venue_type %></li>
+          <li class="event__details badge badge-primary"><%= booking.event.venue_type %></li>
         </div>
       </div>
     <% end %>
