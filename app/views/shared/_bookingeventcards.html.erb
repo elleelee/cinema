@@ -1,0 +1,19 @@
+<ul class= "events_list">
+  <% current_user.bookings.each do |booking| %>
+     <%= link_to event_path(booking.event), class: 'text-decoration-none' do %>
+      <div class="eventcard">
+        <div class="eventposter">
+          <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
+        </div>
+        <div class="event_info">
+          <h4 class="event__title"><%= booking.event.name %> - <%= booking.event.movie %></h4>
+          <li class="event__details"><%= booking.event.address %></li>
+          <li class="event__details"><%= booking.event.date.strftime(" %A %e %B") %> at
+            <%= booking.event.date.strftime("%l %p") %></li>
+          <li class="event__details">You have paid £<%= booking.event.ticket_price %> /ticket</li>
+          <li class="event__details"><%= booking.event.venue_type %></li>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>

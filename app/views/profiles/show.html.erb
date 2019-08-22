@@ -2,11 +2,21 @@
   <div class="profilecards col-md-7">
     <div class="mybookings">
       <h4 class="profile-title">Events you're going to:</h4>
-      <ul>
-        <% current_user.bookings.each do |booking| %>
-          <li><%= booking.name %></li>
+        <% if current_user.bookings %>
+          <%= render '/shared/bookingeventcards' %>
+        <% else %>
+          <div class="eventcard">
+            <div class="eventposter">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shrug.jpg/220px-Shrug.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
+            </div>
+            <div class="event_info">
+              <h4 class="event__title">No events!</h4>
+              <li class="event__details">Check out events near by!</li>
+              <br>
+              <button type="button" class="btn btn-primary" href="/events/new">Check out events to attend!</button>
+            </div>
+          </div>
         <% end %>
-      </ul>
     </div>
 
 
@@ -16,7 +26,7 @@
       <% if current_user.events %>
         <%= render '/shared/eventscards' %>
       <% else %>
-        <div class="hostingcard">
+        <div class="eventcard">
         <div class="eventposter">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shrug.jpg/220px-Shrug.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
         </div>
