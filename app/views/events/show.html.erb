@@ -23,7 +23,7 @@
   <div class="show-content">
     <div class="left-showbox">
       <h3>Venue: @<%= @event.address %></h3>
-      <p>What's the venue like?  You will enjoy the event at a <span class="underline"><%= @event.venue_type.capitalize %></span></p>
+      <p>Venue Type: <span class="underline"><%= @event.venue_type.capitalize %></span></p>
       <p class="bottom_24"><%= @event.description %></p>
       <% if user_signed_in? && policy(@event).edit? %>
         <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %>
