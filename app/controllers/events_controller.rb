@@ -5,26 +5,27 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
+    @events = Event.all
     @events = Event.geocoded
     search_params = params[:search]
+
     if search_params[:query].present?
       @events = Event.near(search_params[:query], 10)
-      # sql_query = "events.address @@ :query"
-      # @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
       @events = Event.geocoded
     end
+
     if search_params[:from].present? && search_params[:to].present?
       @events = @events.where('date >= ?', search_params[:from]).where('date <= ?', search_params[:to])
+    else
+      @events = Event.geocoded
     end
-
 
     @markers = @events.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: 'info_window', locals: { event: event })
-        # image_url: helpers.asset_url('pin.png')
       }
     end
   end
@@ -63,10 +64,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       params_photos.each do |file|
         @event.photos.create(image: file)
-        # raise
       end
-      # raise
-      # need to redirect to host show page
       redirect_to event_path(@event)
     else
       render :edit
@@ -98,3 +96,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :address, :description, :date, :venue_type, :movie, :ticket_price, :capacity)
   end
 end
+      # sql_query = "events.address @@ :query"
+      # @events = Event.where(sql_query, query: "%#{params[:query]}%")
