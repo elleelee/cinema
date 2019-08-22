@@ -1,0 +1,10 @@
+<div class="search-form-control">
+  <%= simple_form_for :search, url: events_path, method: "get" do |f| %>
+    <div class="navbarsearchform form-inline">
+      <%= f.input :query, as: :string, input_html: { id: "flat_address", style: "width: 300px"}, label: false, placeholder: "City"%>
+      <%= f.input :from, as: :string, placeholder: "Date from", required: false, input_html: {class: "datepicker search-box"}, label: false %>
+      <%= f.input :to, as: :string, placeholder: "Date to", required: false, input_html: {class: "datepicker search-box"}, label: false %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
