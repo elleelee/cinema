@@ -32,7 +32,7 @@ const initMapbox = () => {
        .setPopup(popup)
        .addTo(map);
    });
-   fitMapToMarkers(map, markers);
+   if (markers.length > 0) fitMapToMarkers(map, markers);
    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
  }
 };
