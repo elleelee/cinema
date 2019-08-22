@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_policy_scoped
   skip_after_action :verify_authorized, only: [:show]
@@ -7,11 +6,24 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.geocoded
+    search_params = params[:search]
+    if search_params[:query].present?
+      @events = Event.near(search_params[:query], 10)
+      # sql_query = "events.address @@ :query"
+      # @events = Event.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @events = Event.geocoded
+    end
+    if search_params[:from].present? && search_params[:to].present?
+      @events = @events.where('date >= ?', search_params[:from]).where('date <= ?', search_params[:to])
+    end
+
+
     @markers = @events.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
-        infoWindow: render_to_string(partial: 'info_window', locals: { event: event} ),
+        infoWindow: render_to_string(partial: 'info_window', locals: { event: event })
         # image_url: helpers.asset_url('pin.png')
       }
     end
