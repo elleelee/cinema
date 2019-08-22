@@ -2,9 +2,11 @@
   <% @events.each do |event| %>
     <%= link_to event, class: 'text-decoration-none' do %>
         <div class="eventcard">
-          <div class="eventposter">
-            <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
-          </div>
+          <% if event.poster.present? %>
+            <div class="eventposter" style="background-image: url('<%= cl_image_path event.poster %>')">
+              <!-- <img src="https://www.fillmurray.com/140/200" class="event__thumbnail"> -->
+            </div>
+          <% end %>
           <div class="event_info">
             <h4 class="event__title"><%= event.name %> - <%= event.movie %></h4>
             <li class="event__details"><%= event.address %></li>
