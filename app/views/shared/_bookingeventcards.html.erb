@@ -2,9 +2,11 @@
   <% current_user.bookings.each do |booking| %>
      <%= link_to event_path(booking.event), class: 'text-decoration-none' do %>
       <div class="eventcard">
-        <div class="eventposter">
-          <img src="https://www.fillmurray.com/140/200" class="event__thumbnail">
-        </div>
+        <% if booking.event.poster.present? %>
+          <div class="eventposter" style="background-image: url('<%= cl_image_path booking.event.poster %>')">
+          <!-- <img src="https://www.fillmurray.com/140/200" class="event__thumbnail"> -->
+          </div>
+        <% end %>
         <div class="event_info">
           <h4 class="event__title"><%= booking.event.name %> - <%= booking.event.movie %></h4>
           <li class="event__details"><%= booking.event.address %></li>
