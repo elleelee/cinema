@@ -17,7 +17,7 @@
                 <% sum += booking.number_of_tickets %>
               <% end %>
             <li class="event__details"><strong><%= sum %></strong> people have booked your event & you have earned <strong>£<%= event.ticket_price * sum %></strong> on this!</li>
-            <li class="event__details"><%= event.venue_type %></li>
+            <li class="event__details badge badge-primary"><%= event.venue_type %></li>
           </div>
         </div>
     <% end %>
