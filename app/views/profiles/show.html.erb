@@ -1,13 +1,17 @@
 <div class="cards-container">
   <div class="profilecards col-md-7">
     <div class="mybookings">
-      <h4 class="profile-title bottom">Events you're going to:</h4>
-      <% @events = current_user.events %>
-      <%= render '/events/eventscards' %>
+      <h4 class="profile-title">Events you're going to:</h4>
     </div>
+
+
     <div class="myevents">
       <h4 class="profile-title">Events you're hosting:</h4>
-      <div class="hostingcard">
+      <% @events = current_user.events %>
+      <% if current_user.events %>
+        <%= render '/shared/eventscards' %>
+      <% else %>
+        <div class="hostingcard">
         <div class="eventposter">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shrug.jpg/220px-Shrug.jpg" height="200" width="140" alt="shrugging-old-man" class="event__thumbnail">
         </div>
@@ -15,9 +19,11 @@
           <h4 class="event__title">No events!</h4>
           <li class="event__details">You could earn 💰💰💰 by hosting an event!</li>
           <br>
-          <button type="button" class="btn btn-primary">Host an event!</button>
+          <button type="button" class="btn btn-primary" href="/events/new">Host an event!</button>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
+
