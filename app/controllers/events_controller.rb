@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     search_params = params[:search]
 
     if search_params.present? && search_params[:query].present?
-      @events = Event.near(search_params[:query], 4)
+      @events = Event.near(search_params[:query], 15)
     else
       @events = Event.geocoded
     end
