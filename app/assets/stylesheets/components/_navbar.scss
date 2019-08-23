@@ -22,6 +22,10 @@
   color: #5f6060;
 }
 
+.dropdown-item {
+  color: #3d3f3f;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #3d3f3f;
   &:hover {
@@ -29,8 +33,8 @@
   }
 }
 
-.dropdown-item {
-  color: #3d3f3f;
+.myevents {
+  margin-top: 30px;
 }
 
 //For non-home navbar
