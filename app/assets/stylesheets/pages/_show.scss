@@ -80,7 +80,12 @@
   margin: 0 15px;
 }
 
-// Allowing linebreaks in the event description
+
+#map-show {
+  width:1000px;
+  height: 400px;
+}
+  
 pre {
   display: block;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
