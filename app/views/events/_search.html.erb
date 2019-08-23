@@ -6,7 +6,9 @@
       <%= f.input :from, as: :string, placeholder: "yyyy-mm-dd", required: false, input_html: {class: "datepicker search-box"} %>
       <%= f.input :to, as: :string, placeholder: "yyyy-mm-dd", required: false, input_html: {class: "datepicker search-box"} %>
     </div>
-    <%= submit_tag "Search", class: "btn btn-danger" %>
+    <div class="search-button">
+      <%= submit_tag "Search", class: "btn btn-danger btn-block" %>
+    </div>
   <% end %>
 </div>
 
