@@ -7,14 +7,14 @@
 
 
 const updatePlusOnClick = (element, counter) => {
-  let countNum = Number.parseInt(counter.dataset.count, 10);
   const submit = document.querySelector("#booking-submit");
   const input = document.querySelector("#booking_number_of_tickets");
   const bookingTicketPrice = document.querySelector("#booking-ticket-price").dataset.price;
   const ticketPrice = Number.parseInt(bookingTicketPrice, 10);
   const capacity = Number.parseInt(document.querySelector('.show-capacity').dataset.capacity);
   element.addEventListener("click", (event) => {
-    if (parseInt(counter.innerHTML, 10) < capacity) {
+    if (Number.parseInt(counter.innerHTML, 10) < capacity) {
+      let countNum = Number.parseInt(counter.dataset.count, 10);
       countNum += 1;
       counter.dataset.count = countNum;
       counter.innerHTML = countNum;
