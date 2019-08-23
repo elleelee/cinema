@@ -64,12 +64,17 @@
         <% end %>
       </div>
     </div>
-    <div id="map-show">
-      <div
-          id="map"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <div class="map-show">
+        <div class="row" id="map-width" >
+          <div class="col-md-12">
+            <div
+                id="map"
+                style="height: 300px"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
