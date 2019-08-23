@@ -22,6 +22,17 @@
   color: #5f6060;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #3d3f3f;
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dropdown-item {
+  color: #3d3f3f;
+}
+
 //For non-home navbar
 
 .navbarsearchform {
