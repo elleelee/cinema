@@ -14,6 +14,10 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       # redirect_to profile_path
+      respond_to do |format|
+        # format.html { redirect_to restaurant_path(@restaurant) }
+        format.js
+      end
     else
       render 'events/show'
     end

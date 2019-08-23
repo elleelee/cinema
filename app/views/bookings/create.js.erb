@@ -1,0 +1,13 @@
+const audio = new Audio('/sound/sound.mp3');
+audio.play();
+
+swal({
+    title: "You booking is successful",
+    text: "Be ready for the event!",
+    icon: "success",
+    button: "OK"})
+  .then(function() {
+      const link = document.querySelector('#profile-link');
+      link.click();
+  });
+
