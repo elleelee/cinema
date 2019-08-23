@@ -1,7 +1,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <% @event.photos.each_with_index do |photo, index| %>
-      <div class="carousel-item <%= 'active' if index == 0 %>" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url('<%= cl_image_path photo.image %>')">
+      <div class="carousel-item <%= 'active' if index == 0 %>" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path photo.image %>')">
         <div class="carousel-caption d-none d-md-block">
           <h3><%= photo.event.name %></h3>
           <h5>Showing: <%= photo.event.movie %></h5>
@@ -32,10 +32,10 @@
         <p class="event_descrption"><%= @event.description %></p>
       </pre>
       <% if user_signed_in? && policy(@event).edit? %>
-        <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %>
+        <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_event_path(@event), class: 'btn btn-primary' %>
       <% end %>
       <% if user_signed_in? && policy(@event).destroy? %>
-        <%= link_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: "Delete #{@event.name}?" }, class: 'btn btn-primary' %>
+        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, event_path(@event), method: :delete, data: { confirm: "Delete #{@event.name}?" }, class: 'btn btn-primary' %>
       <% end %>
     </div>
     <div class="right-showbox">
@@ -57,24 +57,19 @@
             <%= link_to 'Sign in to book', new_user_session_path,class: 'btn btn-primary w-100' %>
           <% end %>
         </div>
-      </div>
-      <div class="poster">
-        <% if @event.poster.present? %>
-          <div class="show-movie" style="background-image: url('<%= cl_image_path @event.poster %>')">
-        <% end %>
-      </div>
-    </div>
-    <div class="map-show">
-        <div class="row" id="map-width" >
-          <div class="col-md-12">
-            <div
-                id="map"
-                style="height: 300px"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div id="show-map" >
+            <div class="row" id="row-map">
+              <div class="col-md-12">
+                <div
+                    id="map"
+                    style="height: 350px; border-radius: 0";
+                    data-markers="<%= @markers.to_json %>"
+                    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>
