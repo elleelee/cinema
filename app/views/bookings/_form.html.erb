@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <%= simple_form_for [@event, @booking] do |f| %>
+  <%= simple_form_for [@event, @booking] ,remote: true do |f| %>
     <%= f.input :number_of_tickets, as: :hidden, input_html: { value: 1 }  %>
     <%= f.submit "Pay", class: "btn btn-primary w-100", id: "booking-submit" %>
   <% end %>
