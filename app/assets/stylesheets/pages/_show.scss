@@ -80,9 +80,6 @@
   margin: 0 15px;
 }
 
-#map-width {
-  width: 1000px;
-}
 
 pre {
   display: block;
@@ -94,19 +91,19 @@ pre {
 
 // MOVIE POSTER
 
-// .poster {
+// #poster {
 //   width: 100%;
-//   margin-top: -150px;
+//   margin-top: -9px;
 //   display: flex;
 // }
 
-// .show-movie {
-//   background-position: center;
-//   background-size: cover;
-//   height: 428px;
-//   width: 300px;
-//   align-items: right;
-// }
+#show-map {
+  margin-top: -9px;
+}
+
+#row-map {
+  width: 428px;
+}
 
 
 
