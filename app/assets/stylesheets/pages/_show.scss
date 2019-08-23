@@ -80,6 +80,15 @@
   margin: 0 15px;
 }
 
+// Allowing linebreaks in the event description
+pre {
+  display: block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  white-space: pre-wrap !important;
+  margin: 1em 0;
+}
+
 // MOVIE POSTER
 
 // .poster {
@@ -95,3 +104,6 @@
 //   width: 300px;
 //   align-items: right;
 // }
+
+
+
