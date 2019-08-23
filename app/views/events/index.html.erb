@@ -5,9 +5,6 @@
   <% if @from_date && @to_date %>
     <h4 class="resultsheading">
       <%= @events.size  %> screenings in <%= search_params[:query] %> from <%= @from_date.strftime("%A, %B %e") %> to <%= @to_date.strftime("%A, %B %e") %>
-
-
-
     </h4>
   <% end %>
 
