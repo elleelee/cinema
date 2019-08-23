@@ -80,10 +80,18 @@
   margin: 0 15px;
 }
 
+
 #map-show {
   width:1000px;
   height: 400px;
-  margin: 0 auto;
+}
+  
+pre {
+  display: block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  white-space: pre-wrap !important;
+  margin: 1em 0;
 }
 
 // MOVIE POSTER
@@ -101,3 +109,6 @@
 //   width: 300px;
 //   align-items: right;
 // }
+
+
+
