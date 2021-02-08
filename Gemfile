@@ -4,7 +4,7 @@ ruby '2.6.3'
 #Added by AlexFlamant
 gem "devise"
 gem "cloudinary", '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'pundit'
 gem 'geocoder'
 
